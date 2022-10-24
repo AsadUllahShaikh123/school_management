@@ -1,7 +1,8 @@
 import express from 'express'
+import { getStudents } from '../controllers/student.js';
 
-const routes = express.Router();
+const router = express.Router();
 
-routes.get('/',(req,res)=>{
-  res.send('Routing is working fine at my side')
-})
+router.get('/',getStudents)
+
+export default router;
