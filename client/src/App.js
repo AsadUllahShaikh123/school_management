@@ -13,7 +13,7 @@ const App = () => {
   };
   return (
     <div className="App">
-      <Container maxWidth="lg" sx={{border:'2px solid black'}}>
+      <Container maxWidth="lg">
         <AppBar sx={appBar} color="inherit" position="static">
           <Typography variant="h2" align="center">
             Students Create and Show
