@@ -1,6 +1,6 @@
 import { Box, Button, TextField } from "@mui/material";
 import { useState } from "react";
-
+import axios from 'axios';
 export let Create = () => {
   const [student, setStudent] = useState({
     regNo: 0,
@@ -16,7 +16,9 @@ export let Create = () => {
     setStudent({...student,[key]:value})
     console.log(student.regNo);
   };
-
+  let createStudent=()=>{
+    axios.post('http://localhost:5000/students',student);
+  }
   return (
     <>
       <h1>Create Student</h1>
@@ -59,7 +61,7 @@ export let Create = () => {
           value={student.section}
           onChange={(event) => handleChange(event)}
         />
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" onClick={()=> createStudent()}>
           Create
         </Button>
       </Box>

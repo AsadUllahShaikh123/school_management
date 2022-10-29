@@ -5,12 +5,12 @@ import cors from 'cors';
 import studentRoutes from './routes/student.js'
 
 const app = express();
-app.use('/students',studentRoutes)
 
 app.use(bodyParser.json({limit:'20mb',extended:true}));
 app.use(bodyParser.urlencoded({limit:'20mb',extended:true}))
 
-app.use(cors());
+app.use(cors({ origin: "http://localhost:5000", optionsSuccessStatus: 200 }));
+app.use('/students',studentRoutes)
 
 const CONNECTION_URL =  'mongodb+srv://AsadUllah:AsadUllah0786@mern-practice.hoxmynm.mongodb.net/?retryWrites=true&w=majority'
 const PORT = process.env.PORT || 5000;
