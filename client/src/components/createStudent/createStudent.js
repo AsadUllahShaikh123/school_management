@@ -18,8 +18,10 @@ export let Create = () => {
   };
   let  createStudent=async ()=>{
     
-    await axios.post('http://localhost:5000/students',student);
-    console.log('data posted to mongodb');
+    await axios.post('http://localhost:5000/students',student)
+    .then(()=> {
+      window.location.reload(false);
+    })
   }
   return (
     <>
