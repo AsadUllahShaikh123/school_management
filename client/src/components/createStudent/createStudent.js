@@ -16,8 +16,10 @@ export let Create = () => {
     setStudent({...student,[key]:value})
     console.log(student.regNo);
   };
-  let createStudent=()=>{
-    axios.post('http://localhost:5000/students',student);
+  let  createStudent=async ()=>{
+    
+    await axios.post('http://localhost:5000/students',student);
+    console.log('data posted to mongodb');
   }
   return (
     <>
