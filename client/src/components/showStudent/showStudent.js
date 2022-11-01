@@ -15,8 +15,9 @@ export function Student() {
   const [studentList,setStudentList] = React.useState([]);
 
   React.useEffect(()=>{
-    axios.get('https://localhost:5000/students')
+    axios.get('http://localhost:5000/students')
     .then((allStudents)=> setStudentList(allStudents.data))
+    .catch((error) => console.log(error.message,'error'));
   },[])
   console.log(studentList,'studetnList')
   return (
